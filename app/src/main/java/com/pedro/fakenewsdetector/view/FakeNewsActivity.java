@@ -19,6 +19,10 @@ public class FakeNewsActivity extends AppCompatActivity {
         controller = new FakeNewsController(this);
         controller.init();
 
+        if(getIntent().getBooleanExtra("tutorial_done", false)) {
+            controller.setTutorialAsShown();
+        }
+
         if(!controller.shownTutorial()) {
             startActivity(new Intent(this, TutorialActivity.class));
             return;

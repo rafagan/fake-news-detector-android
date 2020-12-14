@@ -1,16 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.TutorialActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginStart="37dp"
+    android:layout_marginEnd="37dp"
+    android:layout_marginBottom="19dp">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <me.relex.circleindicator.CircleIndicator
+        android:id="@+id/indicator"
+        android:layout_above="@+id/btn_complete_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        app:ci_drawable="@drawable/shape_circle_tutorial"/>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="344dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/btn_complete_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="@string/tutorial_button"
+        android:background="@drawable/share_tutorial_button"
+        android:textAllCaps="false" />
+</RelativeLayout>

@@ -5,6 +5,7 @@ import android.util.Log;
 import com.pedro.fakenewsdetector.api.service.FakeNewsService;
 import com.pedro.fakenewsdetector.api.service.ParseUrlService;
 import com.pedro.fakenewsdetector.model.FakeNewsModel;
+import com.pedro.fakenewsdetector.model.SystemModel;
 import com.pedro.fakenewsdetector.model.dao.FakeNewsDAO;
 import com.pedro.fakenewsdetector.model.dao.SystemDAO;
 import com.pedro.fakenewsdetector.view.FakeNewsActivity;
@@ -52,5 +53,11 @@ public class FakeNewsController {
 
     public boolean shownTutorial() {
         return systemDAO.get().isTutorialSeen();
+    }
+
+    public void setTutorialAsShown() {
+        SystemModel obj = systemDAO.get();
+        obj.setTutorialSeen(true);
+        systemDAO.update(obj);
     }
 }
