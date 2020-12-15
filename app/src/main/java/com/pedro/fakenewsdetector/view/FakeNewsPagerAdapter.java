@@ -48,7 +48,8 @@ public class FakeNewsPagerAdapter extends FragmentPagerAdapter {
     }
 
     public void refresh() {
-        ((FakeNewsHistoryFragment)fragments[1]).getAdapter().refresh(controller.getAllFakeNews());
+        FakeNewsHistoryAdapter adapter = ((FakeNewsHistoryFragment)fragments[1]).getAdapter();
+        adapter.refresh(controller.getAllFakeNews());
         notifyDataSetChanged();
     }
 }

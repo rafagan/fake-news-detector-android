@@ -19,12 +19,31 @@ public class FakeNewsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fake_news);
 
+        confController();
+        if(!controller.shownTutorial()) {
+            startActivity(new Intent(this, TutorialActivity.class));
+            return;
+        }
+
+        confTabLayout();
+    }
+
+    private void confController() {
+        controller = new FakeNewsController(this);
+        controller.init();
+
+//        controller.checkFakeNews(
+//            "https://noticias.uol.com.br/colunas/josias-de-souza/2020/12/11/governo-bolsonaro-agora-cogita-confiscar-vacinas.htm",
+//            "Teste"
+//        );
+    }
+
+    private void confTabLayout() {
         ViewPager pager = findViewById(R.id.fake_news_pager);
         TabLayout tabLayout = findViewById(R.id.fake_news_options);
         adapter = new FakeNewsPagerAdapter(getSupportFragmentManager(), this, controller);
         pager.setAdapter(adapter);
         tabLayout.setupWithViewPager(pager);
-        adapter.refresh();
 
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -44,22 +63,5 @@ public class FakeNewsActivity extends AppCompatActivity {
 
             }
         });
-
-        controller = new FakeNewsController(this);
-        controller.init();
-
-        if(getIntent().getBooleanExtra("tutorial_done", false)) {
-            controller.setTutorialAsShown();
-        }
-
-        if(!controller.shownTutorial()) {
-            startActivity(new Intent(this, TutorialActivity.class));
-            return;
-        }
-
-        controller.checkFakeNews(
-            "https://noticias.uol.com.br/colunas/josias-de-souza/2020/12/11/governo-bolsonaro-agora-cogita-confiscar-vacinas.htm",
-            "Teste"
-        );
     }
 }
