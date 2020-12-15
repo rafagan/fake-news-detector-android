@@ -14,7 +14,7 @@ public class FakeNewsService extends BaseService<FakeNewsApi> {
 
     @Override
     public String getBaseUrl() {
-        return "http://192.168.100.28";
+        return "http://3.238.247.57";
     }
 
     public void checkPortuguese(String content, DefaultCallback.OnSuccessCallback<DetectFakeNewsScoreDTO> onSuccess, DefaultCallback.OnErrorCallback onError) {

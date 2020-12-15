@@ -5,10 +5,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.pedro.fakenewsdetector.R;
-import com.pedro.fakenewsdetector.model.FakeNewsModel;
 
 import me.relex.circleindicator.CircleIndicator;
 
@@ -20,7 +18,7 @@ public class TutorialActivity extends AppCompatActivity {
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         CircleIndicator indicator = findViewById(R.id.indicator);
-        viewPager.setAdapter(new TutorialPageAdapter());
+        viewPager.setAdapter(new TutorialPagerAdapter());
         indicator.setViewPager(viewPager);
 
         findViewById(R.id.btn_complete_tutorial).setOnClickListener(view -> {

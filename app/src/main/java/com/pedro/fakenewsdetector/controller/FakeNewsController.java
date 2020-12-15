@@ -11,6 +11,7 @@ import com.pedro.fakenewsdetector.model.dao.SystemDAO;
 import com.pedro.fakenewsdetector.view.FakeNewsActivity;
 
 import java.util.Date;
+import java.util.List;
 
 import okhttp3.ResponseBody;
 
@@ -59,5 +60,9 @@ public class FakeNewsController {
         SystemModel obj = systemDAO.get();
         obj.setTutorialSeen(true);
         systemDAO.update(obj);
+    }
+
+    public List<FakeNewsModel> getAllFakeNews() {
+        return fakeNewsDAO.list();
     }
 }

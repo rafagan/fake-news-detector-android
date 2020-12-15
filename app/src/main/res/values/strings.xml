@@ -4,11 +4,14 @@
     <string name="tutorial_2">Acompanhe suas pesquisas</string>
     <string name="tutorial_3">Compartilhe com os amigos</string>
     <string name="tutorial_4">Vamos tornar a informação mais confiável!</string>
+    <string name="tutorial_button">Comece agora</string>
 
+    <string name="search">Buscar</string>
+    <string name="history">Histórico</string>
     <string name="title">Título</string>
     <string name="created_at">Criado em</string>
     <string name="content">Conteúdo</string>
     <string name="url">URL</string>
     <string name="share">Compartilhar</string>
-    <string name="tutorial_button">Comece agora</string>
+    <string name="image">Imagem</string>
 </resources>

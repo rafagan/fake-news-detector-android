@@ -10,22 +10,17 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.pedro.fakenewsdetector.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TutorialPageAdapter extends PagerAdapter {
-    List<Integer> tutorialPages = new ArrayList<>();
-
-    public TutorialPageAdapter() {
-        tutorialPages.add(R.layout.cell_tutorial_1);
-        tutorialPages.add(R.layout.cell_tutorial_2);
-        tutorialPages.add(R.layout.cell_tutorial_3);
-        tutorialPages.add(R.layout.cell_tutorial_4);
-    }
+public class TutorialPagerAdapter extends PagerAdapter {
+    private int[] tutorialPages = new int[] {
+            R.layout.cell_tutorial_1,
+            R.layout.cell_tutorial_2,
+            R.layout.cell_tutorial_3,
+            R.layout.cell_tutorial_4
+    };
 
     @Override
     public int getCount() {
-        return tutorialPages.size();
+        return tutorialPages.length;
     }
 
     @Override
@@ -37,7 +32,7 @@ public class TutorialPageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         LayoutInflater layoutInflater = (LayoutInflater) container.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(tutorialPages.get(position), null);
+        View view = layoutInflater.inflate(tutorialPages[position], null);
         container.addView(view);
         return view;
     }

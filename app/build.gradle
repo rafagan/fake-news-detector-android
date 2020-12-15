@@ -47,6 +47,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.google.code.gson:gson:2.8.6'
 
-    // Tutorial
+    // Utils
     implementation 'me.relex:circleindicator:1.2.1@aar'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
 }
