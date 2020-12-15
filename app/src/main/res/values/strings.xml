@@ -14,4 +14,7 @@
     <string name="url">URL</string>
     <string name="share">Compartilhar</string>
     <string name="image">Imagem</string>
+    <string name="english">Inglês</string>
+    <string name="portuguese">Português</string>
+    <string name="language">Idioma</string>
 </resources>
