@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="25dp"
@@ -22,14 +23,14 @@
             android:textSize="17sp"
             android:textColor="#082e33"
             android:textStyle="bold"
-            android:text="Título"/>
+            tools:text="Título" />
 
         <TextView
             android:id="@+id/txt_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="Data"/>
+            tools:text="Data" />
 
     </LinearLayout>
 
@@ -49,8 +50,10 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/tutorial_img_1"
+        android:src="@drawable/ic_share"
         android:contentDescription="@string/image"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:clickable="true"
+        android:focusable="true"/>
 
 </LinearLayout>

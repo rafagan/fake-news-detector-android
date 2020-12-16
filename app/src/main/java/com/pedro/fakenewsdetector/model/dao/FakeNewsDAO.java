@@ -7,6 +7,9 @@ import com.pedro.fakenewsdetector.model.SystemModel;
 import com.pedro.fakenewsdetector.model.helper.DaoHelper;
 
 import java.sql.SQLException;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 public class FakeNewsDAO extends DaoHelper<FakeNewsModel> implements IDAO<FakeNewsModel> {
@@ -26,7 +29,9 @@ public class FakeNewsDAO extends DaoHelper<FakeNewsModel> implements IDAO<FakeNe
     @Override
     public List<FakeNewsModel> list() {
         try {
-            return this.getDao().queryForAll();
+            List<FakeNewsModel> results = this.getDao().queryForAll();
+            Collections.sort(results, (o1, o2) -> -o1.getCreatedAt().compareTo(o2.getCreatedAt()));
+            return results;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

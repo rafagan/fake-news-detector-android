@@ -24,4 +24,6 @@ c
     <string name="error_predict">Erro ao classificar notícia</string>
     <string name="text_found">Texto encontrado:</string>
     <string name="clear">Limpar</string>
+    <string name="true_new">Essa notícia parece verídica</string>
+    <string name="fake_new">Encontrei uma fake news!</string>
 </resources>
