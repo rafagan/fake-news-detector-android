@@ -47,7 +47,7 @@ public class FakeNewsController {
             }
             FakeNewsModel model = new FakeNewsModel(url, title, language, data1.getContent(), new Date(), 0.0);
             if(language.equals("pt")) {
-                fakeNewsService.checkPortuguese("aaaaa", data2 -> {
+                fakeNewsService.checkPortuguese(data1.getContent(), data2 -> {
                     model.setScore(data2.getPrediction());
                     Log.d("fake_news_detector", fakeNewsDAO.list().toString());
                     callback.run(model);

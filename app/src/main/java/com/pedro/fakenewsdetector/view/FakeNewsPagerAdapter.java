@@ -1,6 +1,7 @@
 package com.pedro.fakenewsdetector.view;
 
 import android.content.Context;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,6 +11,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.pedro.fakenewsdetector.R;
 import com.pedro.fakenewsdetector.controller.FakeNewsController;
+import com.pedro.fakenewsdetector.model.FakeNewsModel;
+
+import java.util.List;
+import java.util.Objects;
 
 public class FakeNewsPagerAdapter extends FragmentPagerAdapter {
     private final Fragment[] fragments = new Fragment[]{
@@ -48,7 +53,16 @@ public class FakeNewsPagerAdapter extends FragmentPagerAdapter {
     }
 
     public void refresh() {
-        FakeNewsHistoryAdapter adapter = ((FakeNewsHistoryFragment)fragments[1]).getAdapter();
+        FakeNewsHistoryFragment fragment = ((FakeNewsHistoryFragment)fragments[1]);
+        FakeNewsHistoryAdapter adapter = fragment.getAdapter();
+        View emptyView = Objects.requireNonNull(fragment.getView()).findViewById(R.id.txt_empty_history);
+
+        List<FakeNewsModel> results = controller.getAllFakeNews();
+        if(results.size() == 0) {
+            emptyView.setVisibility(View.VISIBLE);
+            return;
+        }
+        emptyView.setVisibility(View.GONE);
         adapter.refresh(controller.getAllFakeNews());
         notifyDataSetChanged();
     }

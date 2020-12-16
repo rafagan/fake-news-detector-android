@@ -33,6 +33,7 @@ public class DefaultCallback<T> implements Callback<T> {
 
     @Override
     public void onFailure(Call<T> call, Throwable t) {
+        errorCallback.onError(0, null, "");
         t.printStackTrace();
     }
 }

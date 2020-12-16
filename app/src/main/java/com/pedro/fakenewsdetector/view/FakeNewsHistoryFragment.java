@@ -38,8 +38,4 @@ public class FakeNewsHistoryFragment extends Fragment {
     public FakeNewsHistoryAdapter getAdapter() {
         return adapter;
     }
-
-    public void setAdapter(FakeNewsHistoryAdapter adapter) {
-        this.adapter = adapter;
-    }
 }

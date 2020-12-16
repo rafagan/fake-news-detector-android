@@ -26,4 +26,5 @@ c
     <string name="clear">Limpar</string>
     <string name="true_new">Essa notícia parece verídica</string>
     <string name="fake_new">Encontrei uma fake news!</string>
+    <string name="empty_history">Você ainda não pesquisou nenhuma notícia :/</string>
 </resources>

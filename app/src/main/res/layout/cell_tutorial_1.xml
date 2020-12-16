@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,9 +16,10 @@
 
     <ImageView
         android:src="@drawable/tutorial_img_1"
-        android:layout_width="148dp"
-        android:layout_height="136dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="100dp"
         android:layout_gravity="center"
         android:contentDescription="@string/tutorial_1" />
 

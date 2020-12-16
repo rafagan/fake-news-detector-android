@@ -9,7 +9,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public abstract class BaseService<T> {
-    final int TIMEOUT = 5;
+    final int TIMEOUT = 60;
     private final Class<T> tClass;
     private T repo;
 
