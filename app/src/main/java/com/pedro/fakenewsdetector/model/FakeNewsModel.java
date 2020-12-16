@@ -20,6 +20,9 @@ public class FakeNewsModel {
     private String content;
 
     @DatabaseField(canBeNull = false)
+    private String language;
+
+    @DatabaseField(canBeNull = false)
     private Date createdAt;
 
     @DatabaseField(canBeNull = false)
@@ -28,10 +31,11 @@ public class FakeNewsModel {
     public FakeNewsModel() {
     }
 
-    public FakeNewsModel(String url, String title, String content, Date createdAt, double score) {
+    public FakeNewsModel(String url, String title, String language, String content, Date createdAt, double score) {
         this.url = url;
         this.title = title;
         this.content = content;
+        this.language = language;
         this.createdAt = createdAt;
         this.score = score;
     }
@@ -60,6 +64,14 @@ public class FakeNewsModel {
         this.content = content;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -82,6 +94,7 @@ public class FakeNewsModel {
                 "url='" + url + '\'' +
                 ", title='" + title + '\'' +
                 ", content='" + content.substring(0, 20) + '\'' +
+                ", language=" + language +
                 ", createdAt=" + createdAt +
                 ", score=" + score +
                 '}';

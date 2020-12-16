@@ -5,7 +5,7 @@
     <string name="tutorial_3">Compartilhe com os amigos</string>
     <string name="tutorial_4">Vamos tornar a informação mais confiável!</string>
     <string name="tutorial_button">Comece agora</string>
-
+c
     <string name="search">Buscar</string>
     <string name="history">Histórico</string>
     <string name="title">Título</string>
@@ -17,4 +17,11 @@
     <string name="english">Inglês</string>
     <string name="portuguese">Português</string>
     <string name="language">Idioma</string>
+    <string name="do_search">Consultar</string>
+    <string name="error_title">Título é obrigatório</string>
+    <string name="error_url">URL é obrigatório</string>
+    <string name="error_parse_url">O conteúdo da notícia não pode ser processado</string>
+    <string name="error_predict">Erro ao classificar notícia</string>
+    <string name="text_found">Texto encontrado:</string>
+    <string name="clear">Limpar</string>
 </resources>

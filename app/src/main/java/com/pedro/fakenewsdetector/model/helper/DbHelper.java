@@ -13,7 +13,7 @@ import java.sql.SQLException;
 
 public class DbHelper extends OrmLiteSqliteOpenHelper {
     private static final String DATABASE_NAME = "fake_news_detector.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
 
     public DbHelper(Context c){
         super(c, DATABASE_NAME, null, DATABASE_VERSION);

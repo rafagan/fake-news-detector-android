@@ -18,8 +18,12 @@ public class FakeNewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fake_news);
-
         confController();
+
+        if(getIntent().getBooleanExtra("tutorial_done", false)) {
+            controller.setTutorialAsShown();
+        }
+
         if(!controller.shownTutorial()) {
             startActivity(new Intent(this, TutorialActivity.class));
             return;
@@ -28,14 +32,13 @@ public class FakeNewsActivity extends AppCompatActivity {
         confTabLayout();
     }
 
+    public FakeNewsController getController() {
+        return controller;
+    }
+
     private void confController() {
         controller = new FakeNewsController(this);
         controller.init();
-
-//        controller.checkFakeNews(
-//            "https://noticias.uol.com.br/colunas/josias-de-souza/2020/12/11/governo-bolsonaro-agora-cogita-confiscar-vacinas.htm",
-//            "Teste"
-//        );
     }
 
     private void confTabLayout() {

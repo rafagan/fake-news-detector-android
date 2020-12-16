@@ -2,12 +2,9 @@ package com.pedro.fakenewsdetector.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import com.pedro.fakenewsdetector.R;
-
 import me.relex.circleindicator.CircleIndicator;
 
 public class TutorialActivity extends AppCompatActivity {
